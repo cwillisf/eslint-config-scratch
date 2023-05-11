@@ -1,5 +1,8 @@
 module.exports = {
+    plugins: ['react'],
+    extends: ['plugin:react/recommended'],
     rules: {
+        'import/no-named-as-default-member': [0], // lots of false positives when using React+Redux
         'react/display-name': [2],
         'react/forbid-prop-types': [2],
         'react/no-children-prop': [2],
@@ -35,7 +38,12 @@ module.exports = {
         'react/jsx-closing-bracket-location': [2, 'line-aligned'],
         'react/jsx-curly-spacing': [2],
         'react/jsx-equals-spacing': [2],
-        'react/jsx-filename-extension': [2],
+        'react/jsx-filename-extension': [
+            2,
+            {
+                extensions: ['.jsx', '.tsx']
+            }
+        ],
         'react/jsx-first-prop-new-line': [2, 'multiline'],
         'react/jsx-handler-names': [2],
         'react/jsx-indent': [2],
@@ -57,6 +65,4 @@ module.exports = {
         'react/jsx-uses-vars': [2],
         'react/jsx-wrap-multilines': [2]
     },
-    plugins: ['react'],
-    extends: ['plugin:react/recommended']
 };

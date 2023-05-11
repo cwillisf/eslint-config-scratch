@@ -1,4 +1,5 @@
 module.exports = {
+    extends: [require.resolve('./index.js')],
     rules: {
         // Node/CommonJS
         'global-require': [2],
